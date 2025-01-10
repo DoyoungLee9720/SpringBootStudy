@@ -18,7 +18,6 @@ public class MainIndex {
     //메인화면
     @GetMapping(value = {"/", "/index"})
     public String index() {
-
         return "/index";
     }
     //글목록

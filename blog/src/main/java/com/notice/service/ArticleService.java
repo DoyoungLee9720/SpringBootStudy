@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,7 +53,7 @@ public class ArticleService {
     
     //페이징 처리한 글 목록 가지고 오기
     public Page<Article> getArticlesAll(int page) {
-        Pageable pageable = PageRequest.of(page,5);
+        Pageable pageable = PageRequest.of(page,5, Sort.by(Sort.Direction.DESC, "number"));
         Page<Article> Articles = articleRepository.findAll(pageable);
         log.info("Articles : " + Articles.getTotalElements());
         return Articles;
