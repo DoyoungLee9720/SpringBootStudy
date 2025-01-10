@@ -4,6 +4,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+//ModelMapper 사용을 위한 방식
 @Configuration
 public class AppConfig {
 

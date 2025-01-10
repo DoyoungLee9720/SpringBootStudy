@@ -1,19 +1,14 @@
 package com.notice.controller;
 
 import com.notice.dto.ArticleDTO;
-import com.notice.dto.PageRequestDTO;
-import com.notice.dto.PageResponseDTO;
 import com.notice.entity.Article;
 import com.notice.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Log4j2
 @Controller
@@ -26,6 +21,7 @@ public class mainindex {
 
         return "/index";
     }
+    //글목록
     @GetMapping({"/article"})
     public String articles(Model model, @RequestParam(value="page",defaultValue = "0") int pg) {
         Page<Article> pageResponseDTO = articleService.getArticlesAll(pg);

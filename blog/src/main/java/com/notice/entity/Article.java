@@ -10,12 +10,12 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Builder
-@Entity                 // 엔티티 객체 정의
+@Entity
 @Table(name = "article")
 public class Article {
     @Id
-    private int number;
-    private String title;
-    private String content;
-    private String writer;
+    private int number; //글번호
+    private String title; // 글제목
+    private String content; //글내용
+    private String writer; //작성자
 }
