@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @Log4j2
 @Controller
 @RequiredArgsConstructor
-public class mainindex {
+public class Mainindex {
     private final ArticleService articleService;
     //메인화면
     @GetMapping(value = {"/", "/index"})
