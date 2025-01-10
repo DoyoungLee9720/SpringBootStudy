@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #0056b3;
+    }
+
+    /* 글 쓰기 버튼 스타일 */
+    a.write-btn {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    a.write-btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* 테이블 스타일 */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        color: #333;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* 페이지네이션 스타일 */
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .page-link {
+        display: inline-block;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: white;
+        color: #333;
+        transition: all 0.3s;
+    }
+
+    .page-link:hover {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .disabled .page-link {
+        pointer-events: none;
+        background-color: #eaeaea;
+        color: #aaa;
+        border-color: #eaeaea;
+    }
+
+    .active .page-link {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+    input[type="text"] {
+        width: 600px;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+</style>
+<body>
+<div class="container">
+    <div>
+        <a th:href="@{/article}">돌아가기</a>
+        <form method="post" th:action="@{/write}">
+        <article>
+            <table border="1">
+
+                <tbody>
+                <tr>
+
+                    <th>제목</th>
+                    <td><input type="text" name="title" id="title" maxlength="20"/></td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td><input type="text" name="content" id="content" maxlength="20"/></td>
+                </tr>
+                <tr>
+                    <th>작성자</th>
+                    <td><input type="text" name="writer" id="writer"/></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button>글쓰기</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
